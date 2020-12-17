@@ -39,4 +39,6 @@ public class NoteViewModel extends AndroidViewModel {
     public void deleteAll(Note note){
         repository.deleteAllNotes();
     }
+
+//    public LiveData<List<Note>> getWithPriority3(){}
 }

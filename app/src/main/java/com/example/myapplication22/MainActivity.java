@@ -31,7 +31,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<Note> notes) {
                 //update recycler
-                Toast.makeText(MainActivity.this,"onChanged", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"onChanged" + noteViewModel.getAll().getValue().size() , Toast.LENGTH_SHORT).show();
+                if(noteViewModel.getAll().getValue().size()==0){
+                    noteViewModel.insert(new Note("tit",3,"desctest"));
+                    Toast.makeText(MainActivity.this,"added" + noteViewModel.getAll().getValue().size() , Toast.LENGTH_SHORT).show();
+
+                }
             }
         });
 
